@@ -3,6 +3,7 @@ import '../App.css'
 import { STRINGS } from '../strings'
 import dice from '../assets/img/dice.png'
 import swap from '../assets/img/swap.png'
+import firebase from '../helpers/firestoreHelper'
 
 type ResultsPaneProps = {
   words: String[], 
@@ -15,6 +16,10 @@ export const ResultsPane = ({words, onClickDice, easterEgg}: ResultsPaneProps) =
   let emptyState = true
   if (words.length === 2) {
     emptyState = false
+  }
+
+  if (easterEgg) {
+    firebase.analytics.logEvent('Easter Egg Triggered')
   }
 
   return <div className="Results-pane"> 

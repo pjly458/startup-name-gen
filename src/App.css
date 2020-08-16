@@ -31,6 +31,10 @@
   }
 }
 
+.Loading-container {
+  padding: 40px;
+}
+
 .Results-pane {
   border-width: 1px;
   border-color: #2c4a43;
